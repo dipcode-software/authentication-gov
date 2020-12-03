@@ -1,31 +1,34 @@
 <?php
+
 namespace PHPForm\Unit;
 
 use PHPUnit\Framework\TestCase;
+use Dipcode\AuthenticationGov;
 
-use PHPForm\Messages;
-
-class MessagesTest extends TestCase
+class AuthenticationGovTest extends TestCase
 {
-    public function testSetMessages()
-    {
-        Messages::setMessages(["REQUIRED2" => "Required"]);
+    /**
+     * @var string
+     */
+    protected $clientId;
 
-        $this->assertEquals("Required", Messages::format("REQUIRED2"));
+    /**
+     * @var OpenWeatherMap
+     */
+    protected $authenticationGov;
+
+
+    protected function setUp()
+    {
+        $this->clientId = '9999999999999999999';
+        $this->authenticationGov = new AuthenticationGov($this->clientId);
     }
 
-    public function testFormat()
+    public function testClientIdNotNull()
     {
-        $this->assertEquals("String", Messages::format("String"));
-        $this->assertEquals("This field is required.", Messages::format("REQUIRED"));
-    }
+        $oag = $this->authenticationGov;
+        $clientId = $oag->getClientId();
 
-    public function testFormatWithContext()
-    {
-        $this->assertEquals("String unit", Messages::format("String {name}", ["name" => "unit"]));
-        $this->assertEquals(
-            "Ensure this value is greater than or equal to 10.",
-            Messages::format("INVALID_MIN_VALUE", ["limit" => 10])
-        );
+        $this->assertSame($this->clientId, $clientId);
     }
 }

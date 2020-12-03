@@ -1,28 +1,38 @@
-# PHP Boilerplate
+# Autenticação Gov - PHP API
 
-A boilerplate for new composer based PHP projects.
+A PHP 7.1+ API to parse data from [autenticacao.gov.pt](https://www.autenticacao.gov.pt/) service. Autenticação Gov, such as the 'Chave Móvel Digital' (CMD), allows you to perform services and access the portals of various public and private entities, from business sectors such as Banking, Telecommunications, Energy, Health, Tourism, among others.
 
-## Getting started
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://www.opensource.org/licenses/MIT)
 
-```bash
-# With composer
-$ composer create-project kreait/php-boilerplate new-project
+## Instalation
+Library can be installed using Composer like so:
 
-# With git
-$ git clone git@github.com:kreait/php-boilerplate.git new-project && cd $_ && rm -rf .git && git init
+```shell
+$ composer require dipcode/authentication-gov
 ```
 
-### Update `composer.json`
+## Starting development
+Start by cloning the repo:
 
-Replace the Namespaces in the `autoload` and `autoload-dev` sections with your project's namespaces
-and run `composer dump-autoload`.
+```shell
+$ git clone https://github.com/dipcode-software/authentication-gov.git
+$ cd authentication-gov
+```
 
-### (Optional) Update `.gitattributes`
+Install the composer dependencies:
+```shell
+$ composer install
+```
 
-Remove the comments in `.gitattributes` so that unneeded files for your package won't get included in your releases.
+### Running the tests
+To run tests, unit and style tests, just run:
 
-### (Optional) Add `composer.lock` to the `.gitignore` file
+```shell
+$ composer test
+```
 
-If you're creating an application instead of a library, it is considered good practice to commit the `composer.lock` file together with the rest of the code.
+### Coding Style
 
-### Start coding! :smile:
+Largely PSR-2 compliant:
+
+https://raw.githubusercontent.com/php-fig/fig-standards/master/accepted/PSR-2-coding-style-guide.md

@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
-        "guzzlehttp/guzzle": "^7.0"
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",
@@ -28,9 +28,15 @@
             "Dipcode\\Unit\\": "tests/"
         }
     },
+    "scripts": {
+        "test": [
+          "phpcs --standard=phpcs.xml",
+          "phpunit -c phpunit.xml"
+        ]
+    },
     "config": {
         "platform": {
-            "php": "7.2.5"
+            "php": "7.1"
         },
         "sort-packages": true
     }

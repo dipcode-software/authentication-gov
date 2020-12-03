@@ -1,9 +1,23 @@
 <?php
-/**
-* Base class for Attributes definition
-*/
+/*
+ * Authentication.Gov — A PHP API to parse data from https://www.autenticacao.gov.pt/.
+ *
+ * @license MIT
+ *
+ * Please see the LICENSE file distributed with this source code for further
+ * information regarding copyright and licensing.
+ *
+ * Please visit the following link to read about the usage policies and the license of
+ * Autenticação.Gov before using this library:
+ *
+ * @see https://www.autenticacao.gov.pt/web/guest/termos-e-condicoes
+ */
+
 namespace Dipcode;
 
+/**
+ * Base class for Attributes definition
+ */
 class Attributes
 {
     /**

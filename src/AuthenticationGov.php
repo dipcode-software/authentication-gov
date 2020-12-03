@@ -37,57 +37,61 @@ class AuthenticationGov
     private $prodUrl = 'https://autenticacao.gov.pt';
 
     /**
-     * @var string
+     * @var string Selected url (production or pre-production)
      */
     private $url;
 
     /**
-     * @var GuzzleHttp\Client
+     * @var Client  PHP HTTP client.
      */
     private $client;
 
     /**
-     * @var string
+     * @var string  It must contain the value 'token'.
      */
     private $responseType;
 
     /**
-     * @var string
+     * @var string  The Authentication.Gov client Id.
      */
     private $clientId;
 
     /**
-     * @var string
+     * @var string  Redirect url to return to the system applicant.
      */
     private $redirectUri = '';
 
     /**
-     * @var string
+     * @var string  Not use, right now.
      */
     private $state = '';
 
     /**
-     * @var string
+     * @var string  Desired authentication level [2-4].
      */
     private $authenticationLevel = '';
 
     /**
-     * @var string
+     * @var string  Is the tab that appears selected by default.
      */
     private $defaultSelectedTab = '';
 
     /**
-     * @var string
+     * @var string  Allows you to hide tabs. It can have multiple values.
      */
     private $hiddenTabs = '';
 
     /**
      * Constructs the AuthenticationGov object.
      *
-     * @param string                      $clientId            The Authentication.Gov client Id. Required.
-     * @param string                      $state               Not user, right now.
-     * @param ClientInterface             $httpClient          A PSR-18 compatible HTTP client implementation.
-     * @param RequestFactoryInterface     $httpRequestFactory  A PSR-17 compatbile HTTP request factory implementation.
+     * @param string    $clientId             The Authentication.Gov client Id. Required.
+     * @param string    $redirectUri          Redirect url to return to the system applicant. Optional.
+     * @param string    $env                  Define the enviroment (preprod|prod). Optional.
+     * @param string    $state                Not use, right now. Optional.
+     * @param string    $responseType         It must contain the value 'token'.
+     * @param string    $authenticationLevel  Desired authentication level [2-4]. Default '3'.
+     * @param string    $defaultSelectedTab   Is the tab that appears selected by default. Optional.
+     * @param string    $hiddenTabs           Allows you to hide tabs. It can have multiple values. Optional.
      *
      * @api
      */
@@ -118,27 +122,13 @@ class AuthenticationGov
     }
 
     /**
-     * Sets the response type.
-     *
-     * @param string $responseType the response type 'token'.
-     *
-     * @api
-     */
-    public function setResponseType($responseType)
-    {
-        $this->responseType = $responseType;
-    }
-
-    /**
-     * Returns the response type.
+     * Returns the client Id.
      *
      * @return string
-     *
-     * @api
      */
-    public function getResponseType()
+    public function getClientId()
     {
-        return $this->responseType;
+        return $this->clientId;
     }
 
     /**
