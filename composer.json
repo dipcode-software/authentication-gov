@@ -1,6 +1,6 @@
 {
     "name": "dipcode/authentication-gov",
-    "description": "A PHP library that implements www.ama.gov.pt authentication.",
+    "description": "A PHP API that implements autenticacao.gov.pt service.",
     "keywords": ["AMA", "Authentication", "government", "oAuth2"],
     "license": "MIT",
     "authors": [
