@@ -161,6 +161,7 @@ class AuthenticationGov
     /**
      * Returns the attributes of the authenticated user.
      *
+     * @param string    $token  The token to allow the request.
      * @param array     $scope  The list of attributes to be returned.
      *
      * @return array   return all values
@@ -194,7 +195,8 @@ class AuthenticationGov
     /**
      * Builds the query string for the scope attributes.
      *
-     * @param mixed $query
+     * @param array   $scope
+     * @param boolean $as_array
      *
      * @return string|array The built query string for the url.
      */
@@ -216,6 +218,7 @@ class AuthenticationGov
      * Fetches the result.
      *
      * @param string $url
+     * @param array  $body
      *
      * @return array
      */
